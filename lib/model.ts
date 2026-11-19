@@ -240,9 +240,9 @@ export function isPreToken(p: SnapshotProtocol): boolean {
   return p.mcap_usd === null && p.gecko_id === null && p.symbol === null;
 }
 
-/** The market-cap-to-TVL multiple of a live protocol, or null when either figure is missing. */
+/** The market-cap-to-TVL multiple of a live protocol, or null when either figure is missing. A market cap of zero is missing data, not a multiple: fifteen live tokens in this snapshot record one. */
 function multipleOf(p: SnapshotProtocol): number | null {
-  if (p.mcap_usd === null || p.tvl_usd <= 0) return null;
+  if (p.mcap_usd === null || p.mcap_usd <= 0 || p.tvl_usd <= 0) return null;
   return p.mcap_usd / p.tvl_usd;
 }
 
