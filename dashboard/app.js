@@ -581,4 +581,8 @@
   window.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' && dialog.open) dialog.close();
   });
+
+  // Exposed for checks: the page's own model and farm plan, so a run can verify them against
+  // board.json instead of trusting that the page and the board agree.
+  window.RADAR_APP = { impliedOf: impliedOf, farmSteps: farmSteps, multipleFor: multipleFor };
 })();

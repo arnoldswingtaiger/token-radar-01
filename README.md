@@ -68,9 +68,13 @@ The three screenshots are taken from the built dashboard in a browser at
 
 1. `1-board.png` — the board, default view (`dashboard/index.html`).
 2. `2-detail.png` — a protocol's detail view, rank 1 open
-   (`dashboard/index.html#p=<rank-1 slug>`).
-3. `3-filtered.png` — a filtered view, e.g. one category
-   (`dashboard/index.html#category=<category>`).
+   (`dashboard/index.html#p=steakhouse-financial`).
+3. `3-filtered.png` — a filtered view, Risk Curators only
+   (`dashboard/index.html#category=Risk%20Curators`).
+
+Open the page from the built output directory (where `data.js` sits beside
+`dashboard/`), not from the repository root: `dashboard/index.html` reads
+`../data.js`.
 
 ---
 
